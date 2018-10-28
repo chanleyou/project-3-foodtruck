@@ -1,1 +1,9 @@
 <h1>Events Index Here</h1>
+
+<p>Log out if logged in and vice versa. This should be in the navbar or footer bar in views/layouts/application.html.erb</p>
+<% if chef_signed_in? %>
+<%= link_to 'Chef Log Out', destroy_chef_session_url, method: :delete %><br>
+<%= link_to 'Edit Chef Profile', edit_chef_registration_url %>
+<% else %>
+<%= link_to 'Chef Log In', new_chef_session_url %>
+<% end %>
